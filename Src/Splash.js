@@ -20,12 +20,10 @@ const Splash = ({ navigation }) => {
       let Data = await StorageValue();
       let themeColor = Data;
       if (Data) {
-        if (!!themeColor) {
-          if (themeColor === "light") {
-            dispatch(changeThemeAction(colors.light));
-          } else {
-            dispatch(changeThemeAction(colors.dark));
-          }
+        if (themeColor === "light") {
+          dispatch(changeThemeAction(colors.light));
+        } else {
+          dispatch(changeThemeAction(colors.dark));
         }
       }
     } catch (error) {

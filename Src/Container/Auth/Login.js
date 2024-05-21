@@ -22,7 +22,7 @@ import { colors } from "../../Colors";
 export default function Login({ navigation }) {
   const color = useSelector((state) => state.theme.theme);
   const dispatch = useDispatch();
-  const [enable, setEnable] = useState(false);
+  const [enable, setEnable] = useState(!!color.dark);
 
   const CommonSocial = ({ source }) => {
     return (
@@ -36,12 +36,12 @@ export default function Login({ navigation }) {
 
   const onPressLightTheme = async () => {
     await setAsyncStorageData(THEME, "light");
-    dispatch(changeThemeAction(colors.dark));
+    dispatch(changeThemeAction(colors.light));
   };
 
   const onPressDarkTheme = async () => {
     await setAsyncStorageData(THEME, "dark");
-    dispatch(changeThemeAction(colors.light));
+    dispatch(changeThemeAction(colors.dark));
   };
 
   const toggleSwitch = (val) => {

@@ -12,8 +12,4 @@ const getAsyncStorageData = async (key) => {
   return JSON.parse(data);
 };
 
-function secondsToMilliseconds(seconds) {
-  return seconds * 1000;
-}
-
-export { getAsyncStorageData, setAsyncStorageData, secondsToMilliseconds };
+export { getAsyncStorageData, setAsyncStorageData };
